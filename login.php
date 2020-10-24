@@ -1,4 +1,8 @@
 <?php session_start(); ?>
+<?php
+ if(isset($_SESSION["admin"])){header("location:index.php");}
+ if(isset($_SESSION["student"])){header("location:student.php");}
+?>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
