@@ -1,3 +1,8 @@
+<?php session_start(); ?>
+<?php 
+if(!isset($_SESSION["student"])){ header("location: login.php");}
+?>
+
 <html !DOCTYPE>
 <html>
 <head>
@@ -23,7 +28,7 @@
 		<div class="form_container">
 		<form action="index.php" method="post" class="form_item">
 		
-		<br><a href="login.php"><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white; margin-top:250px" type="button" name="btn3" value="Logout"></a><br>
+		<br><a href="logout.php"><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white; margin-top:250px" type="button" name="btn3" value="Logout"></a><br>
 			</form>
 			
 			<table id="stu_table" >

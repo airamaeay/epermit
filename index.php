@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php if(!isset($_SESSION["admin"])) header("location: login.php");?>
 <html !DOCTYPE>
 <html>
 <head>
@@ -30,7 +32,7 @@
 				<label><br> School </label><input type="text" name="schl"><br>
 				<label><br> Grant </label><input type="text" name="gra1"><br>
 				<br><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white" type="submit" name="sbtn" value="Create"><br>
-				<br><a href="login.php"><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white" type="button" name="btn3" value="Logout"></a><br>
+				<br><a href="logout.php"><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white" type="button" name="btn3" value="Logout"></a><br>
 			</form>
 			<?php
 			if(isset($_POST["sbtn"])){

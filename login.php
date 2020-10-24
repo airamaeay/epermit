@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,10 +31,6 @@
 					<input type="text" id="text5" name="un" placeholder="Username" required> <br> <br>
 					<input type="password" id="text5" name="pass" placeholder="Password" required> <br> <br>
 					<input type="submit" name="submit-charot">
-					<a href="index.php">	
-					<input  type="button" id="btn" name="sbtn" value="ADMIN"> </a>
-					<a href="student.php">
-					<input  type="button" id="btn_1" name="sbtn" value="STUDENTS"> </a>
 					
 					<p class="link">Don't have an account? <a href="registration.php" style="color:rgb(89, 4, 4);">Register now.</a></p>
 				</form>	
@@ -59,8 +56,10 @@
 		if(mysqli_num_rows($result)){
 			$data_mo = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			if($data_mo["user_type"] == "student"){
+				$_SESSION["student"] = 1;
 				header("location: http://localhost:8080/epermit/student.php");
 			}else{
+				$_SESSION["admin"] = 1;
 				header("location: http://localhost:8080/epermit/index.php");
 			}
 		}
