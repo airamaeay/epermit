@@ -22,8 +22,9 @@
 			</div>
 		</div>
 	<div class="form1">
+		<div style="width:100%;float:left;">
 		<div class="form_container">
-			<form action="index.php" method="post" class="form_item">
+			<!--form action="index.php" method="post" class="form_item">
 				<label><br> Semester </label><input type="text" name="sem"><br>
 				<label><br> A.Y </label><input type="text" name="ay"><br>
 				<label><br> Full Name </label><input type="text" name="fn"><br>
@@ -32,8 +33,8 @@
 				<label><br> School </label><input type="text" name="schl"><br>
 				<label><br> Grant </label><input type="text" name="gra1"><br>
 				<br><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white" type="submit" name="sbtn" value="Create"><br>
-				<br><a href="logout.php"><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white" type="button" name="btn3" value="Logout"></a><br>
-			</form>
+				<br>
+			</form-->
 			<?php
 			if(isset($_POST["sbtn"])){
 				include("config.php");
@@ -43,7 +44,6 @@
 				
 			}
 			?>
-			
 			
 			<table>
 			 <tr>
@@ -100,6 +100,10 @@
 			 ?>
 			
 		
-</table>
+</table>	
+</div>
+<div style="width:1020px;margin:0px auto;margin-bottom:50px;margin-top:-70px;">
+	<a href="logout.php"><input style="font-family:Times New Roman; background-color: rgb(89, 4, 4); color:white" type="button" name="btn3" value="Logout"></a>
+</div>
 </body>
 </html>
