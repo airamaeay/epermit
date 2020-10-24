@@ -32,7 +32,7 @@
 					<input type="submit" name="submit-charot">
 					<a href="index.php">	
 					<input  type="button" id="btn" name="sbtn" value="ADMIN"> </a>
-					<a href="student.php">	
+					<a href="student.php">
 					<input  type="button" id="btn_1" name="sbtn" value="STUDENTS"> </a>
 					
 					<p class="link">Don't have an account? <a href="registration.php" style="color:rgb(89, 4, 4);">Register now.</a></p>
@@ -53,7 +53,18 @@
 		mysqli_query($conn,$inser2);
 		echo ""; 
 	}
-
+	if(isset($_POST["submit-charot"])){
+		include("config.php");
+		$result = mysqli_query($conn,"SELECT * FROM `registration1` WHERE `username2` = '".$_POST["un"]."' AND `password2` = '".$_POST["pass"]."'");
+		if(mysqli_num_rows($result)){
+			$data_mo = mysqli_fetch_array($result, MYSQLI_ASSOC);
+			if($data_mo["user_type"] == "student"){
+				header("location: http://localhost:8080/epermit/student.php");
+			}else{
+				header("location: http://localhost:8080/epermit/index.php");
+			}
+		}
+	}
 ?>
 
 			<div id="rightside">
