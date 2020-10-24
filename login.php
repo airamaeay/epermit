@@ -29,6 +29,7 @@
 				<form action="login.php" method="post" class="box2">
 					<input type="text" id="text5" name="un" placeholder="Username" required> <br> <br>
 					<input type="password" id="text5" name="pass" placeholder="Password" required> <br> <br>
+					<input type="submit" name="submit-charot">
 					<a href="index.php">	
 					<input  type="button" id="btn" name="sbtn" value="ADMIN"> </a>
 					<a href="student.php">	
